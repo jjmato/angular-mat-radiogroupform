@@ -1,0 +1,21 @@
+<form [formGroup]="form">
+		<label id="example-radio-group-label">
+      Choose your first pokemon:
+    </label>
+    <mat-radio-group color="primary"
+      aria-labelledby="example-radio-group-label"
+      class="example-radio-group"
+      formControlName="pokemon">
+      <mat-radio-button class="example-radio-button" 
+        *ngFor="let pokemon of starters" [value]="pokemon">
+        {{pokemon}}
+      </mat-radio-button>
+    </mat-radio-group>
+</form>
+
+<div>Your  partner is: {{ form.get('pokemon').value }}</div>
+
+
+<!-- Copyright 2019 Google Inc. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->
